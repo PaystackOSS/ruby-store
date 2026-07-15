@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mug:
+  name: Ruby Red Mug
+  description: A sturdy ceramic mug.
+  price_cents: 350_000
+  currency: NGN
+  sku: MUG-001
+  active: true
+
+discontinued_tee:
+  name: Old Tee
+  description: No longer sold.
+  price_cents: 500_000
+  currency: NGN
+  sku: TEE-OLD
+  active: false

@@ -1,0 +1,22 @@
+<%= link_to "← Back to store", products_path, class: "back-link" %>
+
+<div class="product-detail">
+  <% if @product.image_url.present? %>
+    <%= image_tag @product.image_url, class: "product-image", alt: @product.name %>
+  <% else %>
+    <div class="product-image-placeholder"><%= @product.name.first %></div>
+  <% end %>
+
+  <div>
+    <h1><%= @product.name %></h1>
+    <span class="price"><%= @product.formatted_price %></span>
+    <p class="description"><%= @product.description %></p>
+
+    <%= form_with url: orders_path, method: :post, local: true, class: "checkout-form" do |f| %>
+      <%= hidden_field_tag :product_id, @product.id %>
+      <%= f.label :email, "Email address" %>
+      <%= f.email_field :email, placeholder: "you@example.com", required: true %>
+      <%= f.submit "Buy Now" %>
+    <% end %>
+  </div>
+</div>

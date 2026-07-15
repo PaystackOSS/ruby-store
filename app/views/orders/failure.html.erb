@@ -1,0 +1,11 @@
+<div class="result-card">
+  <div class="result-icon failure">✕</div>
+  <h1>Payment not successful</h1>
+  <p>We couldn't confirm payment for order #<%= @order.id %>. No charge was completed.</p>
+  <p>Reference: <code><%= @order.reference %></code></p>
+
+  <div class="result-actions">
+    <%= link_to "Try again", product_path(@order.product), class: "btn" %>
+    <%= link_to "← Back to store", products_path, class: "back-link" %>
+  </div>
+</div>

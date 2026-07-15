@@ -1,0 +1,18 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pending_order:
+  product: mug
+  reference: order-ref-pending-1
+  email: buyer1@example.com
+  amount_cents: 350_000
+  currency: NGN
+  status: 0
+
+paid_order:
+  product: mug
+  reference: order-ref-paid-1
+  email: buyer2@example.com
+  amount_cents: 350_000
+  currency: NGN
+  status: 1
+  paid_at: 2026-07-15 19:15:58

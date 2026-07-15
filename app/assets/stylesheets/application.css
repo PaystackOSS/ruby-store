@@ -1,0 +1,326 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+:root {
+  --color-bg: #faf9f7;
+  --color-surface: #ffffff;
+  --color-border: #e7e3de;
+  --color-text: #2b2622;
+  --color-text-muted: #736c64;
+  --color-primary: #b3302c;
+  --color-primary-dark: #8f2622;
+  --color-success-bg: #eaf6ee;
+  --color-success-text: #1e6b3a;
+  --color-error-bg: #fbeceb;
+  --color-error-text: #a3312c;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(43, 38, 34, 0.06), 0 4px 12px rgba(43, 38, 34, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.site-header .header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.site-header a.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.site-header a.brand:hover {
+  color: var(--color-primary);
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+code {
+  background: var(--color-border);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Flash messages */
+
+.flash {
+  max-width: 1080px;
+  margin: 1rem auto 0;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.flash-notice {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.flash-alert {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+/* Product grid */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(43, 38, 34, 0.08), 0 8px 20px rgba(43, 38, 34, 0.08);
+}
+
+.product-card a.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-image,
+.product-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f1ede8, #e7e3de);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.product-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.product-card-body h2 {
+  margin-bottom: 0.4rem;
+}
+
+.price {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Product detail page */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.product-detail .product-image,
+.product-detail .product-image-placeholder {
+  border-radius: var(--radius);
+  aspect-ratio: 1 / 1;
+  font-size: 3rem;
+}
+
+.product-detail h1 {
+  margin-bottom: 0.5rem;
+}
+
+.product-detail .price {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.product-detail .description {
+  color: var(--color-text);
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 720px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+}
+
+/* Checkout form */
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 360px;
+}
+
+.checkout-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.checkout-form input[type="email"] {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.checkout-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(179, 48, 44, 0.12);
+}
+
+.btn,
+.checkout-form input[type="submit"] {
+  appearance: none;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+
+.btn:hover,
+.checkout-form input[type="submit"]:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Order result pages */
+
+.result-card {
+  max-width: 480px;
+  margin: 2rem auto 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.result-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.75rem;
+}
+
+.result-icon.success {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.result-icon.failure {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.result-card h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

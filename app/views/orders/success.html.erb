@@ -1,0 +1,10 @@
+<div class="result-card">
+  <div class="result-icon success">✓</div>
+  <h1>Payment successful</h1>
+  <p>Order #<%= @order.id %> for <%= @order.product.name %> is confirmed.</p>
+  <p>Reference: <code><%= @order.reference %></code></p>
+
+  <div class="result-actions">
+    <%= link_to "← Back to store", products_path, class: "btn" %>
+  </div>
+</div>

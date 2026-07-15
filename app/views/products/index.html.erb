@@ -1,0 +1,19 @@
+<h1>Ruby Store</h1>
+
+<div class="product-grid">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <%= link_to product_path(product), class: "card-link" do %>
+        <% if product.image_url.present? %>
+          <%= image_tag product.image_url, class: "product-image", alt: product.name %>
+        <% else %>
+          <div class="product-image-placeholder"><%= product.name.first %></div>
+        <% end %>
+        <div class="product-card-body">
+          <h2><%= product.name %></h2>
+          <p class="price"><%= product.formatted_price %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
